@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gultendogan.gulten_dogan_odev7.adapter.NoteAdapter
 import com.gultendogan.gulten_dogan_odev7.databinding.ActivityMainBinding
 import com.gultendogan.gulten_dogan_odev7.model.Note
+import com.gultendogan.gulten_dogan_odev7.utils.Constants.Prefs.INFO
+import com.gultendogan.gulten_dogan_odev7.utils.Constants.Prefs.NEW
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -34,28 +34,22 @@ class MainActivity : AppCompatActivity() {
 
         binding.addButton.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("info","new")
+            intent.putExtra(INFO,NEW)
             startActivity(intent)
         }
 
         binding.search.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                //
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                //
             }
 
             override fun afterTextChanged(s: Editable?) {
                 val searchText = s.toString().toLowerCase(Locale.getDefault())
-                val filteredList = ArrayList<Note>()
-
-                for (note in noteList) {
-                    if (note.title.toLowerCase(Locale.getDefault()).contains(searchText)) {
-                        filteredList.add(note)
-                    }
-                }
-
-                noteAdapter.filterList(filteredList)
+                noteAdapter.filterList(noteList.filter{it.title.toLowerCase().contains(searchText)} as ArrayList<Note>)
             }
         })
 
@@ -65,12 +59,14 @@ class MainActivity : AppCompatActivity() {
             val noteTitleIndex = cursor.getColumnIndex("notetitle")
             val idIndex = cursor.getColumnIndex("id")
             val description = cursor.getColumnIndex("notedescription")
+            val dateIndex = cursor.getColumnIndex("notedate")
 
             while (cursor.moveToNext()){
                 val title = cursor.getString(noteTitleIndex)
                 val id = cursor.getInt(idIndex)
                 val description = cursor.getString(description)
-                val note = Note(title,id,description)
+                val date = cursor.getString(dateIndex)
+                val note = Note(title,id,description,date)
                 noteList.add(note)
             }
 
