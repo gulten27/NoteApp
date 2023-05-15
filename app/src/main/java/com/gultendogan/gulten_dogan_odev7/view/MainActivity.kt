@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.gultendogan.gulten_dogan_odev7.adapter.NoteAdapter
 import com.gultendogan.gulten_dogan_odev7.databinding.ActivityMainBinding
 import com.gultendogan.gulten_dogan_odev7.model.Note
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         noteList = ArrayList<Note>()
 
         noteAdapter = NoteAdapter(noteList)
-        binding.recyclerview.layoutManager = GridLayoutManager(this,2)
+        binding.recyclerview.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         binding.recyclerview.adapter = noteAdapter
 
         binding.addButton.setOnClickListener {
