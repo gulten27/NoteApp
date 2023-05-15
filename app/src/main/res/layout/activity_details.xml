@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    tools:context=".view.DetailsActivity">
+
+    <EditText
+        android:id="@+id/noteTitle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/manrope_bold"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/noteDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/manrope_regular"
+        android:gravity="top|start"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteDate" />
+
+    <EditText
+        android:id="@+id/noteDate"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:fontFamily="@font/manrope_regular"
+        android:hint="Date"
+        android:inputType="textPersonName"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/dateButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/noteTitle"
+        app:layout_constraintTop_toBottomOf="@+id/noteTitle" />
+
+    <ImageButton
+        android:id="@+id/dateButton"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_baseline_calendar_month_24"
+        android:background="@drawable/custom_input"
+        app:layout_constraintBottom_toBottomOf="@+id/noteDate"
+        app:layout_constraintEnd_toEndOf="@+id/noteDescription"
+        app:layout_constraintTop_toTopOf="@+id/noteDate" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_button"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_button"
+        android:text="Delete"
+        app:backgroundTint="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

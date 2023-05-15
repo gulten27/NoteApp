@@ -1,0 +1,2 @@
+rootProject.name = "Gulten_Dogan_Odev7"
+include ':app'
