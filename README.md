@@ -1,5 +1,24 @@
 # NoteApp
-Geleceği Yazanlar Gençlere Yatırım, Geleceğe Yazılım Kotlin Bootcamp 7.Ödev
+
+## 	:book: Description :
+
+### :point_right: The user can create a new note by pressing the 'add' button.
+
+### :point_right: There are fields for the user to enter the title, date and description. After clicking the 'Save' button, the data is saved to the local database of the device with SQL commands.
+
+### :point_right: The user can search for their notes on the home page.
+
+### :point_right: User can update and delete their notes.
+
+
+</br>
+
+| Pages in the app | 
+| ----------------- |
+| Home Page |
+| Search |
+| Update Page |
+| Delete |
 
 ## :floppy_disk: Project Features :
 
